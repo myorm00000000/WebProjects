@@ -1,0 +1,12 @@
+  --
+  -- Made by: Sergey Grishin 2016
+  -- Description: small app for making tests on your site
+  --
+  -- @TODO:
+  --  1) Add timer
+  --  2) Add buttons to previous tasks.
+  --  3) Get rid of dependence on Bootstrap.
+  --  4) Add button to skip task (maybe, add functional
+  --     to finish test without finishing all tasks).
+  --  5) Maybe add some social buttons.
+  --
