@@ -42,15 +42,20 @@
 
 		private function select() {
 			return 'SELECT'.$this->getFieldsList().'FROM'.$this->getTableName().
-					$this->getWhere().$this->getOrder().$this->getLimit();
+					$this->getWhere().$this->getOrder().$this->getLimit().$this->getGroup();
 		}
 
 		private function update() {
 			$update = '';
-			foreach ($this->params['values'] as $key => $value)
-				$update .= '`'.$this->mysqli->real_escape_string($key)."` = '".
-							$this->mysqli->real_escape_string($value)."', ";
-			$update = substr($update, 0, -2);
+			foreach ($this->params['values'] as $key => $value) {
+				$field = '`'.$this->mysqli->real_escape_string($key).'`';
+				if (is_array($value) && isset($value[0], $value[1]))
+					$val = '`'.$this->mysqli->real_escape_string($key).'` '.$value[0].$value[1];
+				else
+					$val = "'".$value."'";
+				$update .= $field." = ".$this->mysqli->real_escape_string($val).", ";
+			}
+			$update = stripcslashes(substr($update, 0, -2));
 			return 'UPDATE'.$this->getTableName().'SET '.$update.' '.$this->getWhere();
 		}
 
@@ -89,6 +94,12 @@
 			if (!isset($this->params['limit'][1]))
 				return $limit;
 			return $limit.', '.$this->mysqli->real_escape_string($this->params['limit'][1]);
+		}
+		
+		private function getGroup() {
+			if (!isset($this->params['group']) || !is_string($this->params['group']))
+				return '';
+			return 'GROUP BY `'.$this->mysqli->real_escape_string($this->params['group']).'` ';
 		}
 
 		private function getTableName() {

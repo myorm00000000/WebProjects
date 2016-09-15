@@ -106,7 +106,19 @@
 			'limit' => [],
 			'order' => []
 		]
-	);
+	), "<br />";
+
+	echo "<i>\"test GROUP\"</i> <br />", DataBase::getDBO()->select(
+		'tableName',
+		'resultType',
+		[
+			'fields' => [],
+			'where' => [],
+			'limit' => [],
+			'order' => [],
+			'group' => 'id'
+		]
+	), "<br />";
 
 	echo "<br /><br /><br /><b>Test update:</b><br />";
 
@@ -116,6 +128,16 @@
 			'values' => [
 				'field0' => 'value0',
 				'field1' => 'value1'
+			],
+			'where' => []
+		]
+	), "<br />";
+
+	echo "<i>\"test update field value\"</i> <br />", DataBase::getDBO()->update(
+		'tableName',
+		[
+			'values' => [
+				'field0' => ['+', 2],
 			],
 			'where' => []
 		]
