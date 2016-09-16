@@ -4,7 +4,7 @@
 	 *
 	 *    @class:        Query
 	 *    @description:  class for generation sql-queries to database
-	 *    @version:      1.3.15.0
+	 *    @version:      1.4.1.0
 	 *    @fields:
 	 *                   private object(MySQLi) @mysqli: MySQLi object takes as init parameter;
 	 *                   private array @params: array with params for sql-query.
