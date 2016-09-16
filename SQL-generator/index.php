@@ -17,7 +17,7 @@
 	 * insert\select\update\delete which will be execute the query to DB.
 	 *
 	 * @author: Sergey Grishin
-	 * @version: 1.0.11
+	 * @version: 1.2.1
 	 *
 	 */
 
