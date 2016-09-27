@@ -1,8 +1,8 @@
 @description:
-	Examples and tests of SQL-Queries generator.
-	In this bundle there are 2 files: Query class for generation queries and DataBase class
-	for demonstration work of generator. In real project in class DataBase need to paste code to methods
-	insert\select\update\delete which will be execute the query to DB.
+	Changes in the library with respect to its 2 version:
+	1) added DataBaseException class for generating exception when working with the database.
+	2) Changed the DataBase class - the method and the field to support the Singleton pattern placed in a separate class, and all the logic is separated into AbstractDataBase class.
+	3) Change the Query class in such a way as to generate requests for parts, not passing all the parameters at once. Now, to add to the new query parameters do not need to pass the entire array with the parameters generated is divided into separate methods.
 
 @author: Sergey Grishin
 @version: 3.0
