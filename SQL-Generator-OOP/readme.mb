@@ -1,0 +1,8 @@
+@description:
+	Examples and tests of SQL-Queries generator.
+	In this bundle there are 2 files: Query class for generation queries and DataBase class
+	for demonstration work of generator. In real project in class DataBase need to paste code to methods
+	insert\select\update\delete which will be execute the query to DB.
+
+@author: Sergey Grishin
+@version: 3.0
