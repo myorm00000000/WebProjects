@@ -5,12 +5,12 @@
 		const DB_HOST = 'localhost';
 		const DB_USER = 'root';
 		const DB_PASS = '';
-		const DB_NAME = 'framestudio';
-		const DB_PREFIX = 'fs_';
+		const DB_NAME = 'database';
+		const DB_PREFIX = 'prefix_';
 		const DB_CHARSET = 'UTF8';
 		const DB_LCTIME = 'uk_UA';
-		const ERROR_CONNECT_DB = 'Ошибка соединения с базой данных';
-		const ERROR_SQL_QUERY = 'Невозможно выполнить SQL-запрос.';
-		const ERROR_SQL_PARAM = 'Неверный тип параметра SQL-запроса.';
+		const ERROR_CONNECT_DB = 'Error connectiong to database';
+		const ERROR_SQL_QUERY = 'Unable to execute SQL-query.';
+		const ERROR_SQL_PARAM = 'Wrong type parameter of SQL-query.';
 
 	}
